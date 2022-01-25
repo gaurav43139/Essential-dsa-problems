@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+       int xore=nums[0];
+        for(int i=1;i<nums.size();i++){
+            xore=xore^nums[i];
+        }
+       int xoren=1;
+        for(int i=2;i<=nums.size();i++){
+            xoren=xoren^i;
+        }
+        return xore^xoren;
+    }
+};
